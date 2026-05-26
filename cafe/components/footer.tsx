@@ -1,5 +1,6 @@
 import { Coffee, Instagram, Facebook, Twitter, MapPin, Phone, Clock } from "lucide-react"
 import Link from "next/link"
+import { contact, site } from "../lib/site-config"
 
 export function Footer() {
   return (
@@ -8,10 +9,10 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center gap-2 mb-4">
+              <Link href="/" className="flex items-center gap-2 mb-4">
               <Coffee className="h-8 w-8" />
               <span className="font-[var(--font-playfair)] text-2xl font-bold">
-                Coke&apos;s Coffee
+                {site.name}
               </span>
             </Link>
             <p className="text-background/70 mb-6">
@@ -64,19 +65,19 @@ export function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 mt-0.5 text-primary" />
                 <span className="text-background/70">
-                  Av. Reforma 123, Col. Centro, CDMX
+                  {contact.address}
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-primary" />
                 <span className="text-background/70">
-                  +52 55 1234 5678
+                  {contact.phone}
                 </span>
               </li>
               <li className="flex items-start gap-3">
                 <Clock className="h-5 w-5 mt-0.5 text-primary" />
                 <span className="text-background/70">
-                  Lun - Dom: 7:00 AM - 10:00 PM
+                  {contact.hours}
                 </span>
               </li>
             </ul>
@@ -106,8 +107,8 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-background/20 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-background/60 text-sm">
-            © 2024 Coke&apos;s Coffee. Todos los derechos reservados.
+            <p className="text-background/60 text-sm">
+            © 2024 {site.name}. Todos los derechos reservados.
           </p>
           <div className="flex gap-6 text-sm">
             <Link href="#" className="text-background/60 hover:text-background transition-colors">

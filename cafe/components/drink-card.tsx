@@ -3,6 +3,7 @@
 import { useState } from "react"
 import Image from "next/image"
 import { Plus } from "lucide-react"
+import { useCart } from "@/lib/cart-context"
 import type { Drink, DrinkSize } from "@/lib/drinks-data"
 import { badgeConfig } from "@/lib/drinks-data"
 
@@ -10,8 +11,9 @@ interface DrinkCardProps {
   drink: Drink
 }
 
-export function DrinkCard({ drink }: DrinkCardProps) {
+export function DrinkCard({ drink }: Readonly<DrinkCardProps>) {
   const [selectedSize, setSelectedSize] = useState<DrinkSize>("M")
+  const cart = useCart()
 
   const sizes: DrinkSize[] = ["S", "M", "L"]
   const sizeLabels = {
@@ -80,7 +82,19 @@ export function DrinkCard({ drink }: DrinkCardProps) {
               ${drink.price[selectedSize]}.00
             </p>
           </div>
-          <button className="bg-primary hover:bg-primary/90 text-primary-foreground px-5 py-2.5 rounded-full font-semibold text-sm transition-colors">
+          <button
+            onClick={() =>
+              cart.addItem({
+                id: drink.id,
+                name: drink.name,
+                price: drink.price[selectedSize],
+                size: selectedSize,
+                qty: 1,
+                image: drink.image,
+              })
+            }
+            className="bg-primary hover:bg-primary/90 text-primary-foreground px-5 py-2.5 rounded-full font-semibold text-sm transition-colors"
+          >
             Agregar
           </button>
         </div>

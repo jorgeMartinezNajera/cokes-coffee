@@ -3,9 +3,12 @@
 import { useState } from "react"
 import { Coffee, Menu, ShoppingBag, X } from "lucide-react"
 import Link from "next/link"
+import { useCart } from "@/lib/cart-context"
+import { CartDrawer } from "./cart-drawer"
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const cart = useCart()
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-primary shadow-lg">
@@ -40,12 +43,16 @@ export function Header() {
 
           {/* Cart & Mobile Menu */}
           <div className="flex items-center gap-4">
-            <button className="relative p-2 text-primary-foreground hover:bg-primary-foreground/10 rounded-full transition-colors">
+            <button
+              onClick={() => cart.open()}
+              className="relative p-2 text-primary-foreground hover:bg-primary-foreground/10 rounded-full transition-colors"
+            >
               <ShoppingBag className="h-6 w-6" />
               <span className="absolute -top-1 -right-1 h-5 w-5 bg-secondary text-secondary-foreground text-xs font-bold rounded-full flex items-center justify-center">
-                0
+                {cart.count}
               </span>
             </button>
+            <CartDrawer />
             
             <button 
               className="md:hidden p-2 text-primary-foreground hover:bg-primary-foreground/10 rounded-full transition-colors"

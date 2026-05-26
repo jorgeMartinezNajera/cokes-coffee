@@ -1,0 +1,70 @@
+[
+  {
+    "id": "ORD-mplx781o-K6PX",
+    "customer": {
+      "name": "Jorge Martínez",
+      "email": "jorgenaj2004@gmail.com",
+      "phone": "7293581818",
+      "address": "Inf San Francisco Zotoluca M201",
+      "deliveryTime": "2026-05-25T19:00"
+    },
+    "items": [
+      {
+        "id": "1",
+        "name": "Americano Clásico",
+        "price": 55,
+        "size": "M",
+        "qty": 1,
+        "image": "/drinks/americano.jpg"
+      },
+      {
+        "id": "2",
+        "name": "Latte Vainilla",
+        "price": 65,
+        "size": "M",
+        "qty": 1,
+        "image": "/drinks/latte.jpg"
+      }
+    ],
+    "total": 120,
+    "createdAt": "2026-05-26T00:52:02.556Z"
+  },
+  {
+    "id": "ORD-mplxccr7-8G1J",
+    "customer": {
+      "name": "Jorge Martínez",
+      "email": "jorgenaj2004@gmail.com",
+      "phone": "7293581818",
+      "address": "Inf San Francisco Zotoluca M201",
+      "deliveryTime": "2026-05-25T19:00"
+    },
+    "items": [
+      {
+        "id": "1",
+        "name": "Americano Clásico",
+        "price": 65,
+        "size": "L",
+        "qty": 1,
+        "image": "/drinks/americano.jpg"
+      },
+      {
+        "id": "2",
+        "name": "Latte Vainilla",
+        "price": 65,
+        "size": "M",
+        "qty": 1,
+        "image": "/drinks/latte.jpg"
+      },
+      {
+        "id": "3",
+        "name": "Mocha Intenso",
+        "price": 75,
+        "size": "M",
+        "qty": 1,
+        "image": "/drinks/mocha.jpg"
+      }
+    ],
+    "total": 205,
+    "createdAt": "2026-05-26T00:56:01.940Z"
+  }
+]
